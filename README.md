@@ -1,1 +1,1 @@
-# python_application_deployment_using_terraform
+# This Repository contains practise codes covering areas of DataStructure
