@@ -1,10 +1,16 @@
-def printing(i):
+def forward(i):
     if i <= 0:
-        print("--------------------")
         return
     else:
-        print(i)
-        printing(i-1)
+        forward(i-1)
         print(i)
 
-printing(10)
+def backward(i, N):
+    if i > N:
+        return
+    backward(i+1,N)
+    print(i)
+
+backward(1,10)
+
+
