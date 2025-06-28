@@ -4,7 +4,7 @@ temp1 = [-1,2,-3,4,5]
 def insertion_descending(arr):
     for i in range(1,len(arr)):
         counter = i
-        while(counter > 0):
+        while(counter > 0 and arr[counter] > arr[counter-1]):
             if arr[counter] > arr[counter-1]:
                 arr[counter], arr[counter-1] = arr[counter-1], arr[counter]
 
@@ -13,13 +13,13 @@ def insertion_descending(arr):
 
     return arr
 
-arr2 = [5,4,3,2,1]
-temp2 = [5,4,3,2,1]
+arr2 = [4,5,2,3,1]
+temp2 = [4,5,2,3,1]
 
 def insertion_ascending(arr):
     for i in range(1,len(arr)):
         counter = i
-        while(counter > 0):
+        while(counter > 0 and arr[counter] < arr[counter-1]):
             if arr[counter] < arr[counter-1]:
                 arr[counter], arr[counter-1] = arr[counter-1], arr[counter]
 
