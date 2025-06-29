@@ -61,12 +61,11 @@ def optimal(arr,N):
     if len(arr)<=1 or N <= 0:
         return arr
 
-    arr = reverse(0,N-1,arr)
-    arr = reverse(N,len(arr)-1,arr)
-    arr = reverse(0,len(arr)-1,arr)
+    arr = reverse(0,N-1,arr)    #Reversing left halve of the array
+    arr = reverse(N,len(arr)-1,arr)     #Reversing right halve of the array
+    arr = reverse(0,len(arr)-1,arr)     #Reversing the whole array
 
     print("Using optimal method",arr)
-    
 
     
 
