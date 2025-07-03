@@ -1,0 +1,38 @@
+def brute_force(arr, value):
+    for i in range(0,len(arr)):
+        for j in range(0,len(arr)):
+            if i!=j:
+                if (arr[i]+arr[j]) == value:
+                    print(f"{arr[i]} + {arr[j]} = {value}")
+                    return
+
+def optimum(arr, value):
+    a = {}
+    for index in range(len(arr)):
+        a[arr[index]] = index
+    
+    for i in arr:
+        b = value - i
+        if b in a.keys():
+            print(f"Sum of elements at {a[i]} & {a[b]} is {value}")
+            return
+
+def optimum_2(arr, value):
+    left = 0
+    right = len(arr)-1
+    arr.sort()
+    while(left <= right):
+        v = arr[left] + arr[right]
+
+        if v > value:  #Decrease if value is more from right to left
+            right -=1
+        if v < value: #Increase if value is less from left to right
+            left +=1
+        if v == value:
+            print(f"{left} and {right}")
+            return
+
+
+array = [1,2,3,4,5]
+value = 9
+optimum_2(array, value)
