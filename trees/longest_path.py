@@ -58,8 +58,8 @@ def brute_force(node,d):
     rh = height(node.right)
     d = max(d,lh+rh+1)
     
-    diameter(node.left,d)
-    diameter(node.right,d)
+    brute_force(node.left,d)
+    brute_force(node.right,d)
     return d
 
 Diameter = [0]
